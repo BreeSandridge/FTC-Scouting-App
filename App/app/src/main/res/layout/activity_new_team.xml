@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center_horizontal"
+android:orientation="vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="467dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <!-- Name -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Name:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/teamName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:visibility="visible"/>
+
+
+            </LinearLayout>
+            <!-- Team Number -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Team Number:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/teamNum"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Team #"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- Robot Name -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Robot Name:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/botName"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Robot's Name"
+                    android:inputType="textPersonName" />
+
+
+            </LinearLayout>
+            <!-- School -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="School:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/school"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="School"
+                    android:inputType="textPersonName" />
+
+
+            </LinearLayout>
+            <!-- Landing -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Landing:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/landing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="LandingActivate"/>
+
+
+            </LinearLayout>
+            <!-- Claiming -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Claiming:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/claiming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="ClaimingActivate"/>
+
+
+            </LinearLayout>
+            <!-- Parking -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Parking:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/Parking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="ParkingActivate"/>
+
+
+            </LinearLayout>
+            <!-- Sampling -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Sampling:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/sampling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="SamplingActivate"/>
+
+
+            </LinearLayout>
+            <!-- Depot Gold -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Depot Gold:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/depotGold"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Gold"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- Depot Silver -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Depot Silver:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/depotSilver"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Silver"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- Cargo Bay Gold -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Cargo Bay Gold:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/cargoBayGold"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Gold"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- Cargo Bay Silver -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Cargo Bay Silver:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/cargoBaySilver"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Silver"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- End Game Tag -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="End Game"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!-- End Game Depot Gold -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Depot Gold:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/endDepotGold"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Gold"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- End Game Depot Silver -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Depot Silver:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/endDepotSilver"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Silver"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- End Game Cargo Bay Gold -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Cargo Bay Gold:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/endCargoGold"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Gold"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- End Game Cargo Bay Silver -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Cargo Bay Silver:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/endCargoSilver"
+                    android:layout_width="264dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Silver"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+            <!-- End Game Latching -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Latching:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/latching"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="LatchingActivate"/>
+
+
+            </LinearLayout>
+            <!-- Partially Parked -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Partially Parked:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/partiallyParked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="PartiallyParked"/>
+
+
+            </LinearLayout>
+            <!-- Fully Parked -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Fully Parked:"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fullyParked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="ParkedCompletly"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- Landing -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="saveTeam"
+
+
+        app:srcCompat="@android:drawable/ic_notification_overlay" />
+
+</LinearLayout>
