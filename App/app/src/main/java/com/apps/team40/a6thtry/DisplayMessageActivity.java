@@ -3,6 +3,7 @@ package com.apps.team40.a6thtry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +22,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+
+        setSupportActionBar(myToolbar);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
@@ -118,6 +122,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     public void Done (View view){
         Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
+
+    public void edit (View view){
+        Intent i = new Intent(this, Edit.class);
+        i.putExtra("KEY", team);
         startActivity(i);
     }
     /*public void onItemSelected(AdapterView<?> parent, View view,

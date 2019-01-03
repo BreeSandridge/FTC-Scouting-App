@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    tools:context=".Edit">
 
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_edit" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -40,13 +45,15 @@
                     android:text="Name:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/teamName"
-                    android:layout_width="50dp"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:visibility="visible"/>
 
 
             </LinearLayout>
@@ -63,13 +70,14 @@
                     android:text="Team Number:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/teamNum"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Team #"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -86,13 +94,14 @@
                     android:text="Robot Name:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/botName"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Robot's Name"
+                    android:inputType="textPersonName" />
 
 
             </LinearLayout>
@@ -109,17 +118,17 @@
                     android:text="School:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/school"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="School"
+                    android:inputType="textPersonName" />
 
 
             </LinearLayout>
-
             <!-- Landing -->
             <LinearLayout
                 android:layout_width="360dp"
@@ -133,13 +142,13 @@
                     android:text="Landing:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/landing"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="LandingActivate"/>
 
 
             </LinearLayout>
@@ -156,13 +165,13 @@
                     android:text="Claiming:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/claiming"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="ClaimingActivate"/>
 
 
             </LinearLayout>
@@ -179,13 +188,13 @@
                     android:text="Parking:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/Parking"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="ParkingActivate"/>
 
 
             </LinearLayout>
@@ -202,18 +211,16 @@
                     android:text="Sampling:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/sampling"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="SamplingActivate"/>
 
 
             </LinearLayout>
-
-
             <!-- Depot Gold -->
             <LinearLayout
                 android:layout_width="360dp"
@@ -227,13 +234,14 @@
                     android:text="Depot Gold:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/depotGold"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Gold"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -250,13 +258,14 @@
                     android:text="Depot Silver:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/depotSilver"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Silver"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -273,13 +282,14 @@
                     android:text="Cargo Bay Gold:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/cargoBayGold"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Gold"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -296,13 +306,14 @@
                     android:text="Cargo Bay Silver:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/cargoBaySilver"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Silver"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -334,13 +345,14 @@
                     android:text="Depot Gold:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/endDepotGold"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Gold"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -357,13 +369,14 @@
                     android:text="Depot Silver:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/endDepotSilver"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Depot Silver"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -380,13 +393,14 @@
                     android:text="Cargo Bay Gold:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/endCargoGold"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Gold"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -403,13 +417,14 @@
                     android:text="Cargo Bay Silver:"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/endCargoSilver"
-                    android:layout_width="50dp"
+                    android:layout_width="264dp"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Average Cargo Bay Silver"
+                    android:inputType="number" />
 
 
             </LinearLayout>
@@ -426,13 +441,13 @@
                     android:text="Latching:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/latching"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="LatchingActivate"/>
 
 
             </LinearLayout>
@@ -449,13 +464,13 @@
                     android:text="Partially Parked:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/partiallyParked"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="PartiallyParked"/>
 
 
             </LinearLayout>
@@ -472,44 +487,28 @@
                     android:text="Fully Parked:"
                     android:textStyle="bold" />
 
-                <TextView
+                <CheckBox
                     android:id="@+id/fullyParked"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="4dp"
-                    android:text=""
-                    android:textStyle="bold" />
-
-
+                    android:layout_weight="1"
+                    android:text="Y/N"
+                    android:onClick="ParkedCompletly"/>
 
 
             </LinearLayout>
-            <!-- Finished -->
 
-            <LinearLayout
+            <Button
+                android:id="@+id/done"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:onClick="Done"/>
+            <!-- Done -->
 
-                <Button
-                    android:id="@+id/done"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="Done"
-                    android:text="Done" />
-
-                <Button
-                    android:id="@+id/edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Edit"
-                    android:onClick="edit"/>
-            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
-
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>
