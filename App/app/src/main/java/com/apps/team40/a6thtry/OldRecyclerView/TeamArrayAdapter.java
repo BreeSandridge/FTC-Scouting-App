@@ -1,4 +1,4 @@
-package com.apps.team40.a6thtry;
+package com.apps.team40.a6thtry.OldRecyclerView;
 
 
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.TextView;
+
+import com.apps.team40.a6thtry.R;
+import com.apps.team40.a6thtry.TeamStats;
 
 import java.util.ArrayList;
 

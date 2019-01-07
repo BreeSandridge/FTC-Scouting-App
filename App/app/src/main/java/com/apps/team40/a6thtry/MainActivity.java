@@ -1,86 +1,70 @@
 package com.apps.team40.a6thtry;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
+
+import com.apps.team40.a6thtry.OldRecyclerView.Contact;
 
 import java.util.ArrayList;
 
-//import com.codexpedia.list.viewholder.R;
-
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.apps.team40.clickcounter";
-    RecyclerView recyclerView;
-    public TeamArrayAdapter teamArrayAdapter = new TeamArrayAdapter(R.layout.list_item, GlobalList.teams);
 
-
-    public Object clone()throws CloneNotSupportedException{
-        return super.clone();
-    }
+    ArrayList<Contact> contacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Lookup the recyclerview in activity layout
+        RecyclerView rvTeams = (RecyclerView) findViewById(R.id.rvTeams);
 
-        Intent intent = getIntent();
-
-
-        recyclerView = (RecyclerView) findViewById(R.id.item_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(teamArrayAdapter);
-
-
-
-
-
-
-
-
-
+        // Initialize contacts
+        contacts = Contact.createContactsList(20);
+        // Create adapter passing in the sample user data
+        TeamAdapter adapter = new TeamAdapter(GlobalList.teams);
+        // Attach the adapter to the recyclerview to populate items
+        rvTeams.setAdapter(adapter);
+        // Set layout manager to position the items
+        rvTeams.setLayoutManager(new LinearLayoutManager(this));
+        // That's all!
+        RecyclerView.ItemDecoration itemDecoration = new
+                DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        rvTeams.addItemDecoration(itemDecoration);
 
 
-        for (int i = 0; i < GlobalList.teams.size(); i++){
-            System.out.println(GlobalList.teams.get(i).TeamName);
-            System.out.println(GlobalList.teams.size());
-        }
+        ItemClickSupport.addTo(rvTeams).setOnItemClickListener(
+                new ItemClickSupport.OnItemClickListener() {
+                    @Override
+                    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                        // do it
+                        Open(v, position);
+                    }
+                }
+        );
+
+
+
 
     }
 
-    public void OpenTeam(View view){
+
+    public void Open(View view, int position){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        //System.out.println(team.getTeamName());
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-        System.out.println("##########################");
-
-
-        //intent.putExtra(EXTRA_MESSAGE, teamArrayAdapter.teamPick.getTeamName());
-
-        intent.putExtra("KEY", teamArrayAdapter.teamPick);
+        intent.putExtra("KEY", GlobalList.teams.get(position));
         startActivity(intent);
     }
-
     public void NewTeam(View view) {
         Intent intent = new Intent(this, NewTeam.class);
         //teamList.add(new TeamStats());
         //intent.putExtra("Key", teamList.get(teamList.size()-1));
         startActivity(intent);
     }
+
 
 }
