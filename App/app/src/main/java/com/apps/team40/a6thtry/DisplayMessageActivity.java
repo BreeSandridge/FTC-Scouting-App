@@ -2,8 +2,10 @@ package com.apps.team40.a6thtry;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,11 +26,18 @@ public class DisplayMessageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_message);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
 
+
         setSupportActionBar(myToolbar);
+        ActionBar actionBar = getSupportActionBar();
+
+        Menu m = menu(R.menu.menu_view_team);
+        onCreateOptionsMenu(m);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         team = (TeamStats) intent.getSerializableExtra("KEY");
+
+        setTitle(team.TeamName);
 
         // Capture the layout's TextView and set the string as its text
         TextView teamName = findViewById(R.id.teamName);

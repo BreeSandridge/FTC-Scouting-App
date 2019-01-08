@@ -5,13 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.View;
 import android.widget.Toast;
 
 import com.apps.team40.a6thtry.OldRecyclerView.Contact;
 
 import java.util.ArrayList;
+
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.ItemDecoration itemDecoration = new
                 DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         rvTeams.addItemDecoration(itemDecoration);
+
+        rvTeams.setItemAnimator(new SlideInUpAnimator());
+
+
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(rvTeams);
+
 
 
         ItemClickSupport.addTo(rvTeams).setOnItemClickListener(

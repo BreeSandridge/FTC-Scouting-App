@@ -97,9 +97,11 @@ public class TeamAdapter extends
 
         // Set item views based on your views and data model
         TextView textView = viewHolder.nameTextView;
-        textView.setText(team.TeamName);
+        textView.setText("Team: " + team.TeamName);
         textView = viewHolder.numberTextView;
-        textView.setText(String.valueOf(team.TeamNum));
+        textView.setText(String.valueOf("#" + team.TeamNum));
+        textView = viewHolder.schoolTextView;
+        textView.setText("School: " + team.School);
 
     }
 

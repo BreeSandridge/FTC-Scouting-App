@@ -36,16 +36,16 @@ public class Edit extends AppCompatActivity {
         School.setText(team.School);
 
         CheckBox Landing = findViewById(R.id.landing);
-        Landing.setChecked(team.Parked_Partially);
+        Landing.setChecked(team.Landing);
 
         CheckBox Claiming = findViewById(R.id.claiming);
-        Claiming.setChecked(team.Parked_Partially);
+        Claiming.setChecked(team.Claiming);
 
         CheckBox Parking = findViewById(R.id.Parking);
-        Parking.setChecked(team.Parked_Partially);
+        Parking.setChecked(team.Parking);
 
         CheckBox Sampling = findViewById(R.id.sampling);
-        Sampling.setChecked(team.Parked_Partially);
+        Sampling.setChecked(team.Sampling);
 
         TextView DepotGold = findViewById(R.id.depotGold);
         DepotGold.setText(String.valueOf(team.Depot_Gold));
@@ -72,7 +72,7 @@ public class Edit extends AppCompatActivity {
         EndCargoSilver.setText(String.valueOf(team.End_Cargo_Bay_Silver));
 
         CheckBox Latching = findViewById(R.id.latching);
-        Latching.setChecked(team.Parked_Partially);
+        Latching.setChecked(team.Latched);
 
         CheckBox PartiallyParked = findViewById(R.id.partiallyParked);
         PartiallyParked.setChecked(team.Parked_Partially);
@@ -108,8 +108,10 @@ public class Edit extends AppCompatActivity {
     public void LatchingActivate (View view){
         team.Latched = bool(team.Latched);
     }
-    public void PartiallyParked (View view) {team.Parked_Partially = bool(team.Parked_Partially);}
-    public void ParkedCompletly (View view) {team.Parked_Completely = bool(team.Parked_Completely);}
+    public void PartiallyParked (View view) {
+        team.Parked_Partially = bool(team.Parked_Partially); }
+    public void ParkedCompletly (View view) {
+        team.Parked_Completely = bool(team.Parked_Completely);}
 
 
 
