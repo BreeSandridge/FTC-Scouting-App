@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.io.IOException;
+
 public class NewTeam extends AppCompatActivity {
 //public class NewTeam extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -19,22 +21,6 @@ public class NewTeam extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_team);
-        EditText TeamName = findViewById(R.id.teamName);
-        EditText TeamNum = findViewById(R.id.teamNum);
-        EditText BotName = findViewById(R.id.botName);
-        EditText School = findViewById(R.id.school);
-
-        /*// Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-
-
-// Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.gameStateArray, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinner.setAdapter(adapter);*/
 
 
     }
@@ -122,9 +108,9 @@ public class NewTeam extends AppCompatActivity {
         EditText EndDepotSilver = findViewById(R.id.endDepotSilver);
         EditText EndCargoGold = findViewById(R.id.endCargoGold);
         EditText EndCargoSilver = findViewById(R.id.endCargoSilver);
-        Button Latching = findViewById(R.id.latching);
-        Button PartiallyParked = findViewById(R.id.partiallyParked);
-        Button FullyParked = findViewById(R.id.fullyParked);
+        EditText Notes = findViewById(R.id.notes);
+        EditText MatchNotes = findViewById(R.id.tourny);
+
 
 
 
@@ -142,10 +128,19 @@ public class NewTeam extends AppCompatActivity {
         team.End_Depot_Silver = ToInt(EndDepotSilver.getText().toString());
         team.End_Cargo_Bay_Gold = ToInt(EndCargoGold.getText().toString());
         team.End_Cargo_Bay_Silver = ToInt(EndCargoSilver.getText().toString());
+        team.teamNotes = Notes.getText().toString();
+        team.tournamentNotes = MatchNotes.getText().toString();
 
 
 
         GlobalList.add(team);
+
+        Saving s = new Saving();
+        try {
+            s.Save(team, getApplicationContext());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

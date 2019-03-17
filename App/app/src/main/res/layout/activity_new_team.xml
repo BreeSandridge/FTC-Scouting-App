@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:gravity="center_horizontal"
-android:orientation="vertical">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="467dp">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/text_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +47,7 @@ android:orientation="vertical">
                     android:ems="10"
                     android:hint="Name"
                     android:inputType="textPersonName"
-                    android:visibility="visible"/>
+                    android:visibility="visible" />
 
 
             </LinearLayout>
@@ -134,8 +141,8 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="LandingActivate"/>
+                    android:onClick="LandingActivate"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
@@ -157,8 +164,8 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="ClaimingActivate"/>
+                    android:onClick="ClaimingActivate"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
@@ -180,8 +187,8 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="ParkingActivate"/>
+                    android:onClick="ParkingActivate"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
@@ -203,8 +210,8 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="SamplingActivate"/>
+                    android:onClick="SamplingActivate"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
@@ -308,8 +315,8 @@ android:orientation="vertical">
             <LinearLayout
                 android:layout_width="360dp"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
                 <TextView
@@ -433,8 +440,8 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="LatchingActivate"/>
+                    android:onClick="LatchingActivate"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
@@ -456,8 +463,8 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="PartiallyParked"/>
+                    android:onClick="PartiallyParked"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
@@ -479,25 +486,74 @@ android:orientation="vertical">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Y/N"
-                    android:onClick="ParkedCompletly"/>
+                    android:onClick="ParkedCompletly"
+                    android:text="Y/N" />
 
 
             </LinearLayout>
+            <!-- Notes -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Notes:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/notes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Notes:"
+                    android:inputType="textMultiLine" />
+
+
+            </LinearLayout>
+            <!-- Tournaments -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Match Notes:"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/tourny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:text="Game 1:  \nGame 2:  \nGame 3:  \nGame 4:  " />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Finished"
+                android:clickable="true"
+                android:onClick="saveTeam"/>
+
 
         </LinearLayout>
     </ScrollView>
 
 
-    <!-- Landing -->
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="saveTeam"
 
 
-        app:srcCompat="@android:drawable/ic_notification_overlay" />
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

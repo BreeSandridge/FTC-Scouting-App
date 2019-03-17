@@ -80,6 +80,12 @@ public class Edit extends AppCompatActivity {
         CheckBox ParkedCompletly = findViewById(R.id.fullyParked);
         ParkedCompletly.setChecked(team.Parked_Completely);
 
+        TextView Notes = findViewById(R.id.notes);
+        Notes.setText(team.teamNotes);
+
+        TextView MatchNotes = findViewById(R.id.matchNotes);
+        MatchNotes.setText(team.tournamentNotes);
+
 
     }
 

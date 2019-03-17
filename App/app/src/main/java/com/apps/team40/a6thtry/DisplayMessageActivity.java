@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,13 +29,11 @@ public class DisplayMessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-
-
         setSupportActionBar(myToolbar);
         ActionBar actionBar = getSupportActionBar();
 
-        Menu m = menu(R.menu.menu_view_team);
-        onCreateOptionsMenu(m);
+        //Menu m = menu(R.menu.menu_view_team);
+        //onCreateOptionsMenu(m);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
@@ -39,10 +41,10 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
         setTitle(team.TeamName);
 
-        // Capture the layout's TextView and set the string as its text
-        TextView teamName = findViewById(R.id.teamName);
-        teamName.setText(team.TeamName);
-        // Capture the layout's TextView and set the string as its text
+        ScrollView s = findViewById(R.id.ScrollViewer);
+        s.setSmoothScrollingEnabled(true);
+
+
         TextView teamNum = findViewById(R.id.teamNum);
         teamNum.setText(String.valueOf(team.TeamNum));
 
@@ -97,6 +99,12 @@ public class DisplayMessageActivity extends AppCompatActivity {
         TextView ParkedCompletly = findViewById(R.id.fullyParked);
         ParkedCompletly.setText(boolString(team.Parked_Completely));
 
+        TextView Notes = findViewById(R.id.notes);
+        Notes.setText(team.teamNotes);
+
+        TextView MatchNotes = findViewById(R.id.matchNotes);
+        MatchNotes.setText(team.tournamentNotes);
+
 
 
 
@@ -120,6 +128,29 @@ public class DisplayMessageActivity extends AppCompatActivity {
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_view_team, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Settings();
+                return true;
+           /* case R.id.help:
+                showHelp();
+                return true;(*/
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void Settings(){
+
+    }
     public String boolString (boolean bool){
         if (bool){
             return "True";

@@ -40,6 +40,9 @@ public class TeamStats implements Serializable, Cloneable {
     public boolean Parked_Completely = false;
     public int End_Total_Points = 0;
 
+    public String teamNotes = "";
+    public String tournamentNotes = "";
+
     public TeamStats(){}
 
 

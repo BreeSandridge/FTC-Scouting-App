@@ -6,20 +6,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="81dp">
 
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/ScrollViewer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +46,7 @@
             android:orientation="vertical">
 
             <!-- Name -->
-            <LinearLayout
+            <!--<LinearLayout
                 android:layout_width="360dp"
                 android:layout_height="50dp"
                 android:orientation="horizontal">
@@ -49,7 +67,7 @@
                     android:textStyle="bold" />
 
 
-            </LinearLayout>
+            </LinearLayout>-->
             <!-- Team Number -->
             <LinearLayout
                 android:layout_width="360dp"
@@ -310,8 +328,8 @@
             <LinearLayout
                 android:layout_width="360dp"
                 android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
 
                 <TextView
@@ -481,9 +499,59 @@
                     android:textStyle="bold" />
 
 
+            </LinearLayout>
+
+
+
+
+            <!-- Notes -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Notes:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/notes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text=""
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
+
+            <!-- Match Notes -->
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="69dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="Match Notes:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/matchNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text=""
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
             <!-- Finished -->
 
             <LinearLayout
@@ -504,9 +572,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Edit"
-                    android:onClick="edit"/>
+                    android:onClick="edit"
+                    android:text="Edit" />
             </LinearLayout>
+
+
 
         </LinearLayout>
     </ScrollView>
